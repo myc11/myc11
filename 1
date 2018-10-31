@@ -1,0 +1,67 @@
+# Need to load image file into 
+# the sketch's data folder.
+# Top menu: Sketch -> Add File
+v=0
+w=0
+x=0
+y=0
+z=0
+def setup():
+    global sat_img
+    global gost
+    global pump
+    global pum
+    size(1080, 750)
+    sat_img = loadImage("images.jpg")
+    gost=loadImage("gost.jpg")
+    pump=loadImage("pum.jpg")
+    pum=loadImage("pump.jpg")
+
+def draw():
+    global w
+    global x
+    global y
+    global z
+    global v
+    background(0)
+    
+    v+=2
+    if v==300:
+        v=0
+    w+=1
+    if w==30:
+        w=0
+    
+    if x>=840:
+        x=0
+    x+=5
+    
+
+    y+=1
+    if y==255:
+        y=0
+
+    z+=1
+    if z==40:
+        z=0
+    
+    
+   
+    fill(y,145,12)
+   
+    textSize(60)
+    text("happy halloween!",570,60)
+    
+    
+    image(sat_img, x, x,x,x)
+    image(gost,500+w,100+z)
+    
+    pum.resize(300,200)
+    image(pum,0,550)
+    pump.resize(300,200)
+    
+    image(pump,800+y,100)
+    pump.resize(250,200)
+    image(pump,820+v,300)
+
+    
